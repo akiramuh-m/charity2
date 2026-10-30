@@ -86,7 +86,7 @@ if(form){
   });
 }
 
-const counters=[...document.querySelectorAll('.count-up')];
+const wa=document.createElement('a');wa.href='https://wa.me/256778802972';wa.target='_blank';wa.rel='noopener';wa.textContent='WhatsApp';wa.style.cssText='position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:12px 16px;border-radius:999px;font-weight:800;text-decoration:none;z-index:50;box-shadow:0 4px 12px rgba(0,0,0,.2)';document.body.appendChild(wa);
 const timers=new Map();
 counters.forEach(el=>{
   el.addEventListener('mouseenter',()=>{
