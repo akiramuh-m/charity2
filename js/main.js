@@ -96,4 +96,3 @@ counters.forEach(el=>{
   const stepTime=duration/target;
   const timer=setInterval(()=>{start++;el.textContent=start+suffix;if(start>=target){clearInterval(timer)}},stepTime);
 });
-});
