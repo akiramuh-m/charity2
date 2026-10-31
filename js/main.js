@@ -89,18 +89,11 @@ if(form){
 const wa=document.createElement('a');wa.href='https://wa.me/256778802972';wa.target='_blank';wa.rel='noopener';wa.textContent='WhatsApp';wa.style.cssText='position:fixed;bottom:20px;right:20px;background:#25D366;color:#fff;padding:12px 16px;border-radius:999px;font-weight:800;text-decoration:none;z-index:50;box-shadow:0 4px 12px rgba(0,0,0,.2)';document.body.appendChild(wa);
 const timers=new Map();
 counters.forEach(el=>{
-  el.addEventListener('mouseenter',()=>{
-    if(timers.has(el)){clearInterval(timers.get(el))}
-    const target=+el.getAttribute('data-target');
-    const suffix=target==76?'%':'';
-    let start=0;
-    const duration=2000;
-    const stepTime=duration/target;
-    const timer=setInterval(()=>{
-      start++;
-      el.textContent=start+suffix;
-      if(start>=target){clearInterval(timer);timers.delete(el)}
-    },stepTime);
-    timers.set(el,timer);
-  });
+  const target=+el.getAttribute('data-target');
+  const suffix=target==76?'%':'';
+  let start=0;
+  const duration=2000;
+  const stepTime=duration/target;
+  const timer=setInterval(()=>{start++;el.textContent=start+suffix;if(start>=target){clearInterval(timer)}},stepTime);
+});
 });
